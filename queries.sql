@@ -1,5 +1,5 @@
 CREATE TABLE EMPLOYEE (
-  emp_Id INTEGER PRIMARY KEY,
+  emp_id INTEGER PRIMARY KEY,
   emp_name TEXT NOT NULL,
   department TEXT NOT NULL,
   designation TEXT NOT NULL,
@@ -25,10 +25,10 @@ VALUES
 
 -- 1 answer 
 
--- SELECT emp_name, department, salary
--- FROM EMPLOYEE
--- WHERE salary > 45000
--- ORDER BY salary DESC;
+SELECT emp_name, department, salary
+FROM EMPLOYEE
+WHERE salary > 45000
+ORDER BY salary DESC;
 
 
 
@@ -36,43 +36,90 @@ VALUES
 
 
 
--- SELECT emp_name, department
--- FROM EMPLOYEE
--- WHERE emp_name LIKE "Sa%";
+SELECT emp_name, department
+FROM EMPLOYEE
+WHERE emp_name LIKE "Sa%";
 
 
 
 -- 3  answer 
 
--- SELECT DISTINCT designation
--- FROM EMPLOYEE
--- ORDER BY designation;
+SELECT DISTINCT designation
+FROM EMPLOYEE
+ORDER BY designation;
 
 
 -- 4 answer  
 
--- SELECT 
---     department,
---     SUM(salary) AS total_salary
--- FROM EMPLOYEE
--- GROUP BY department
--- ORDER BY total_salary DESC;
+SELECT 
+    department,
+    SUM(salary) AS total_salary
+FROM EMPLOYEE
+GROUP BY department
+ORDER BY total_salary DESC;
 
 
 
 
 
 
+-- 5. answer
+SELECT department,
+       MAX(salary) AS max_salary,
+       MIN(salary) AS min_salary
+FROM EMPLOYEE
+GROUP BY department;
 
 
+-- 6. answer
+SELECT department,
+       AVG(salary) AS avg_salary
+FROM EMPLOYEE
+GROUP BY department
+HAVING AVG(salary) > 45000
+ORDER BY avg_salary DESC;
 
 
+-- 7. answer
+SELECT emp_name, department, salary
+FROM EMPLOYEE
+ORDER BY salary DESC;
 
 
+-- 8. answer
+SELECT emp_name, city
+FROM EMPLOYEE
+WHERE city LIKE 'D%'
+ORDER BY emp_name;
 
 
+-- 9. answer
+SELECT DISTINCT city
+FROM EMPLOYEE
+ORDER BY city;
 
 
+-- 10. answer
+SELECT emp_name, salary
+FROM EMPLOYEE
+WHERE salary BETWEEN 40000 AND 50000
+ORDER BY salary ASC;
+
+
+-- 11. answer
+SELECT city,
+       AVG(salary) AS avg_salary
+FROM EMPLOYEE
+GROUP BY city
+HAVING AVG(salary) > 45000
+ORDER BY avg_salary DESC;
+
+
+-- 12. answer
+SELECT emp_name, designation, salary
+FROM EMPLOYEE
+WHERE designation IN ('Engineer', 'Analyst')
+ORDER BY salary DESC;
 
 
 
