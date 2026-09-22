@@ -27,7 +27,7 @@ VALUES
 
 SELECT emp_name, department, salary
 FROM EMPLOYEE
-WHERE salary > 45000
+WHERE salary >= 45000
 ORDER BY salary DESC;
 
 
@@ -83,7 +83,7 @@ ORDER BY avg_salary DESC;
 -- 7. answer
 SELECT emp_name, department, salary
 FROM EMPLOYEE
-ORDER BY salary DESC;
+ORDER BY department, salary DESC;
 
 
 -- 8. answer
